@@ -13,9 +13,9 @@ const ChatBot = () => {
 
   const quickQuestions = [
     "What's Kevin's strongest tech skill?",
-    "Give me the TLDR on Kevin's thesis.",
+    "Who is Kevin Vulcano?",
     "What does Kevin think about free will?",
-    "tell me about kevin vulcano's promotion.",
+    "Tell me about Kevin Vulcano's promotion.",
   ];
 
   // Revised useEffect for initial message
