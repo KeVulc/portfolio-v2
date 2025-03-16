@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 
 export default function ProjectsGrid({ projects }) {
+  const comingSoon = true;
+
   return (
     <section className='relative pt-12 pb-24 px-4 text-center overflow-hidden'>
       <div className='absolute inset-0 opacity-20'>
@@ -19,16 +21,29 @@ export default function ProjectsGrid({ projects }) {
         </motion.h2>
         <span className='block h-1 w-24 bg-gradient-to-r from-sky-400 to-purple-500 animate-underline mx-auto mb-16' />
 
-        <div className='grid md:grid-cols-3 gap-8'>
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={project.title}
-              project={project}
-              data-aos='zoom-in-up'
-              data-aos-delay={index * 100}
-            />
-          ))}
-        </div>
+        {comingSoon ? (
+          <div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className='text-4xl font-bold text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-purple-500 relative'
+            >
+              COMING SOON
+            </motion.h2>
+          </div>
+        ) : (
+          <div className='grid md:grid-cols-3 gap-8'>
+            {projects.map((project, index) => (
+              <ProjectCard
+                key={project.title}
+                project={project}
+                data-aos='zoom-in-up'
+                data-aos-delay={index * 100}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
