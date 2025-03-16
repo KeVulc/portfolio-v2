@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 // @ts-check
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/portfolio/",
+  base: "/portfolio-v2/",
   build: {
     minify: "esbuild",
     rollupOptions: {
